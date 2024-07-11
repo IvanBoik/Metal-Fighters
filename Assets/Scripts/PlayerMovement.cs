@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public Animator _animator;
 
     Vector3 velocity;
 
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -60,7 +62,14 @@ public class PlayerMovement : MonoBehaviour
         {
             isMoving = false;
         }
-
-        lastPosition = gameObject.transform.position;
+        if (isMoving == true)
+        {
+            _animator.SetBool("isWalk", true);
+        }
+        else
+        {
+            _animator.SetBool("isWalk", false);
+        }
+            lastPosition = gameObject.transform.position;
     }
 }
