@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Bots/robot on the scene.unity
+- path: Assets/Scenes/vSlice.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -23,8 +23,8 @@ public class MouseController : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensetivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensetivity * Time.deltaTime;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, topClamp, bottomClamp);
+        //xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation - mouseY, topClamp, bottomClamp);
 
         yRotation += mouseX;
 
